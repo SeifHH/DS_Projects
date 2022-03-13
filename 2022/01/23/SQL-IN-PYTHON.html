@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Title | Data Science/Data Analytics Projects</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Deep dive into the Information Iformatics." />
+<meta property="og:description" content="Deep dive into the Information Iformatics." />
+<link rel="canonical" href="https://seifhh.github.io/DS_Projects/2022/01/23/SQL-IN-PYTHON.html" />
+<meta property="og:url" content="https://seifhh.github.io/DS_Projects/2022/01/23/SQL-IN-PYTHON.html" />
+<meta property="og:site_name" content="Data Science/Data Analytics Projects" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-23T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Title" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-01-23T00:00:00-06:00","datePublished":"2022-01-23T00:00:00-06:00","description":"Deep dive into the Information Iformatics.","headline":"Title","mainEntityOfPage":{"@type":"WebPage","@id":"https://seifhh.github.io/DS_Projects/2022/01/23/SQL-IN-PYTHON.html"},"url":"https://seifhh.github.io/DS_Projects/2022/01/23/SQL-IN-PYTHON.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/DS_Projects/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://seifhh.github.io/DS_Projects/feed.xml" title="Data Science/Data Analytics Projects" /><link rel="shortcut icon" type="image/x-icon" href="/DS_Projects/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/DS_Projects/">Data Science/Data Analytics Projects</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/DS_Projects/about/">About Me</a><a class="page-link" href="/DS_Projects/search/">Search</a><a class="page-link" href="/DS_Projects/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-01-23T00:00:00-06:00" itemprop="datePublished">
+        Jan 23, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/SeifHH/DS_Projects/tree/master/_notebooks/2022-01-23-SQL-IN-PYTHON.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/DS_Projects/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/SeifHH/DS_Projects/master?filepath=_notebooks%2F2022-01-23-SQL-IN-PYTHON.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/DS_Projects/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/SeifHH/DS_Projects/blob/master/_notebooks/2022-01-23-SQL-IN-PYTHON.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/DS_Projects/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FSeifHH%2FDS_Projects%2Fblob%2Fmaster%2F_notebooks%2F2022-01-23-SQL-IN-PYTHON.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/DS_Projects/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-01-23-SQL-IN-PYTHON.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="We-will-be-performing-EDA-on--FIFA-2018-DATASET.--We-will-be-using-both-SQL-and-Python-combination-to-do-the-analysis-in-Jupyter-Notebook.-The-right,-right-from-Jupyter-IDE.">We will be performing EDA on  FIFA 2018 DATASET.  We will be using both SQL and Python combination to do the analysis in Jupyter Notebook. The right, right from Jupyter IDE.<a class="anchor-link" href="#We-will-be-performing-EDA-on--FIFA-2018-DATASET.--We-will-be-using-both-SQL-and-Python-combination-to-do-the-analysis-in-Jupyter-Notebook.-The-right,-right-from-Jupyter-IDE."> </a></h3><p>To be able to run SQL in Jupyter Notebook, we need to download the necessary modules and access the dataset from a local database.</p>
+
+<pre><code>The Dataset we are using can be accessed from: https://public.tableau.com/en-us/s/resources</code></pre>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pyodbc</span>
+
+<span class="n">conn_str</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">r</span><span class="s1">&#39;DRIVER={SQL Server};&#39;</span>
+    <span class="sa">r</span><span class="s1">&#39;SERVER=SEIFEDIN\SQLEXPRESS;&#39;</span>
+    <span class="sa">r</span><span class="s1">&#39;DATABASE=Fifa 18;&#39;</span>
+    <span class="sa">r</span><span class="s1">&#39;Trusted_Connection=yes;&#39;</span>
+<span class="p">)</span>
+<span class="n">cnxn</span> <span class="o">=</span> <span class="n">pyodbc</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">conn_str</span><span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM Fifa18&quot;</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">cnxn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="c1"># cursor.execute(&quot;SELECT * FROM Fifa18&quot;)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">cnxn</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Wage (€)</th>
+      <th>Value (€)</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Photo</th>
+      <th>Nationality</th>
+      <th>Flag</th>
+      <th>Overall</th>
+      <th>Potential</th>
+      <th>Club</th>
+      <th>...</th>
+      <th>RB</th>
+      <th>RCB</th>
+      <th>RCM</th>
+      <th>RDM</th>
+      <th>RF</th>
+      <th>RM</th>
+      <th>RS</th>
+      <th>RW</th>
+      <th>RWB</th>
+      <th>ST</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>565000.0</td>
+      <td>95500000.0</td>
+      <td>Cristiano Ronaldo</td>
+      <td>32.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/20801.png</td>
+      <td>Portugal</td>
+      <td>https://cdn.sofifa.org/flags/38.png</td>
+      <td>94.0</td>
+      <td>94.0</td>
+      <td>Real Madrid CF</td>
+      <td>...</td>
+      <td>61.0</td>
+      <td>53.0</td>
+      <td>82.0</td>
+      <td>62.0</td>
+      <td>91.0</td>
+      <td>89.0</td>
+      <td>92.0</td>
+      <td>91.0</td>
+      <td>66.0</td>
+      <td>92.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>565000.0</td>
+      <td>105000000.0</td>
+      <td>L. Messi</td>
+      <td>30.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/158023.png</td>
+      <td>Argentina</td>
+      <td>https://cdn.sofifa.org/flags/52.png</td>
+      <td>93.0</td>
+      <td>93.0</td>
+      <td>FC Barcelona</td>
+      <td>...</td>
+      <td>57.0</td>
+      <td>45.0</td>
+      <td>84.0</td>
+      <td>59.0</td>
+      <td>92.0</td>
+      <td>90.0</td>
+      <td>88.0</td>
+      <td>91.0</td>
+      <td>62.0</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>280000.0</td>
+      <td>123000000.0</td>
+      <td>Neymar</td>
+      <td>25.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/190871.png</td>
+      <td>Brazil</td>
+      <td>https://cdn.sofifa.org/flags/54.png</td>
+      <td>92.0</td>
+      <td>94.0</td>
+      <td>Paris Saint-Germain</td>
+      <td>...</td>
+      <td>59.0</td>
+      <td>46.0</td>
+      <td>79.0</td>
+      <td>59.0</td>
+      <td>88.0</td>
+      <td>87.0</td>
+      <td>84.0</td>
+      <td>89.0</td>
+      <td>64.0</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>510000.0</td>
+      <td>97000000.0</td>
+      <td>L. Suárez</td>
+      <td>30.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/176580.png</td>
+      <td>Uruguay</td>
+      <td>https://cdn.sofifa.org/flags/60.png</td>
+      <td>92.0</td>
+      <td>92.0</td>
+      <td>FC Barcelona</td>
+      <td>...</td>
+      <td>64.0</td>
+      <td>58.0</td>
+      <td>80.0</td>
+      <td>65.0</td>
+      <td>88.0</td>
+      <td>85.0</td>
+      <td>88.0</td>
+      <td>87.0</td>
+      <td>68.0</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>230000.0</td>
+      <td>61000000.0</td>
+      <td>M. Neuer</td>
+      <td>31.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/167495.png</td>
+      <td>Germany</td>
+      <td>https://cdn.sofifa.org/flags/21.png</td>
+      <td>92.0</td>
+      <td>92.0</td>
+      <td>FC Bayern Munich</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>17976</th>
+      <td>5000.0</td>
+      <td>625000.0</td>
+      <td>A. Muric</td>
+      <td>18.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/233164.png</td>
+      <td>Switzerland</td>
+      <td>https://cdn.sofifa.org/flags/47.png</td>
+      <td>63.0</td>
+      <td>81.0</td>
+      <td>Manchester City</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17977</th>
+      <td>4000.0</td>
+      <td>375000.0</td>
+      <td>W. Atkinson</td>
+      <td>28.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/186572.png</td>
+      <td>England</td>
+      <td>https://cdn.sofifa.org/flags/14.png</td>
+      <td>63.0</td>
+      <td>63.0</td>
+      <td>Mansfield Town</td>
+      <td>...</td>
+      <td>60.0</td>
+      <td>57.0</td>
+      <td>59.0</td>
+      <td>60.0</td>
+      <td>59.0</td>
+      <td>62.0</td>
+      <td>58.0</td>
+      <td>60.0</td>
+      <td>62.0</td>
+      <td>58.0</td>
+    </tr>
+    <tr>
+      <th>17978</th>
+      <td>4000.0</td>
+      <td>675000.0</td>
+      <td>M. Beerman</td>
+      <td>18.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/233165.png</td>
+      <td>Malta</td>
+      <td>https://cdn.sofifa.org/flags/32.png</td>
+      <td>63.0</td>
+      <td>80.0</td>
+      <td>Rangers</td>
+      <td>...</td>
+      <td>62.0</td>
+      <td>57.0</td>
+      <td>56.0</td>
+      <td>58.0</td>
+      <td>53.0</td>
+      <td>59.0</td>
+      <td>48.0</td>
+      <td>58.0</td>
+      <td>63.0</td>
+      <td>48.0</td>
+    </tr>
+    <tr>
+      <th>17979</th>
+      <td>4000.0</td>
+      <td>625000.0</td>
+      <td>P. Burner</td>
+      <td>21.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/235981.png</td>
+      <td>France</td>
+      <td>https://cdn.sofifa.org/flags/18.png</td>
+      <td>63.0</td>
+      <td>76.0</td>
+      <td>OGC Nice</td>
+      <td>...</td>
+      <td>62.0</td>
+      <td>60.0</td>
+      <td>60.0</td>
+      <td>62.0</td>
+      <td>56.0</td>
+      <td>60.0</td>
+      <td>53.0</td>
+      <td>58.0</td>
+      <td>63.0</td>
+      <td>53.0</td>
+    </tr>
+    <tr>
+      <th>17980</th>
+      <td>4000.0</td>
+      <td>220000.0</td>
+      <td>A. Al Mazaidi</td>
+      <td>31.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/191437.png</td>
+      <td>Saudi Arabia</td>
+      <td>https://cdn.sofifa.org/flags/183.png</td>
+      <td>63.0</td>
+      <td>63.0</td>
+      <td>Al Fateh</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>17981 rows × 74 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Wage (€)</th>
+      <th>Value (€)</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Photo</th>
+      <th>Nationality</th>
+      <th>Flag</th>
+      <th>Overall</th>
+      <th>Potential</th>
+      <th>Club</th>
+      <th>...</th>
+      <th>RB</th>
+      <th>RCB</th>
+      <th>RCM</th>
+      <th>RDM</th>
+      <th>RF</th>
+      <th>RM</th>
+      <th>RS</th>
+      <th>RW</th>
+      <th>RWB</th>
+      <th>ST</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>565000.0</td>
+      <td>95500000.0</td>
+      <td>Cristiano Ronaldo</td>
+      <td>32.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/20801.png</td>
+      <td>Portugal</td>
+      <td>https://cdn.sofifa.org/flags/38.png</td>
+      <td>94.0</td>
+      <td>94.0</td>
+      <td>Real Madrid CF</td>
+      <td>...</td>
+      <td>61.0</td>
+      <td>53.0</td>
+      <td>82.0</td>
+      <td>62.0</td>
+      <td>91.0</td>
+      <td>89.0</td>
+      <td>92.0</td>
+      <td>91.0</td>
+      <td>66.0</td>
+      <td>92.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>565000.0</td>
+      <td>105000000.0</td>
+      <td>L. Messi</td>
+      <td>30.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/158023.png</td>
+      <td>Argentina</td>
+      <td>https://cdn.sofifa.org/flags/52.png</td>
+      <td>93.0</td>
+      <td>93.0</td>
+      <td>FC Barcelona</td>
+      <td>...</td>
+      <td>57.0</td>
+      <td>45.0</td>
+      <td>84.0</td>
+      <td>59.0</td>
+      <td>92.0</td>
+      <td>90.0</td>
+      <td>88.0</td>
+      <td>91.0</td>
+      <td>62.0</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>280000.0</td>
+      <td>123000000.0</td>
+      <td>Neymar</td>
+      <td>25.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/190871.png</td>
+      <td>Brazil</td>
+      <td>https://cdn.sofifa.org/flags/54.png</td>
+      <td>92.0</td>
+      <td>94.0</td>
+      <td>Paris Saint-Germain</td>
+      <td>...</td>
+      <td>59.0</td>
+      <td>46.0</td>
+      <td>79.0</td>
+      <td>59.0</td>
+      <td>88.0</td>
+      <td>87.0</td>
+      <td>84.0</td>
+      <td>89.0</td>
+      <td>64.0</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>510000.0</td>
+      <td>97000000.0</td>
+      <td>L. Suárez</td>
+      <td>30.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/176580.png</td>
+      <td>Uruguay</td>
+      <td>https://cdn.sofifa.org/flags/60.png</td>
+      <td>92.0</td>
+      <td>92.0</td>
+      <td>FC Barcelona</td>
+      <td>...</td>
+      <td>64.0</td>
+      <td>58.0</td>
+      <td>80.0</td>
+      <td>65.0</td>
+      <td>88.0</td>
+      <td>85.0</td>
+      <td>88.0</td>
+      <td>87.0</td>
+      <td>68.0</td>
+      <td>88.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>230000.0</td>
+      <td>61000000.0</td>
+      <td>M. Neuer</td>
+      <td>31.0</td>
+      <td>https://cdn.sofifa.org/48/18/players/167495.png</td>
+      <td>Germany</td>
+      <td>https://cdn.sofifa.org/flags/21.png</td>
+      <td>92.0</td>
+      <td>92.0</td>
+      <td>FC Bayern Munich</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 74 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Let's-check-how-many-countries-are-represented-in-the-dataset.">Let's check how many countries are represented in the dataset.<a class="anchor-link" href="#Let's-check-how-many-countries-are-represented-in-the-dataset."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Nationality</span> <span class="o">=</span> <span class="s2">&quot;SELECT COUNT(DISTINCT Nationality) AS Nationality FROM Fifa18&quot;</span>
+
+<span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">Nationality</span><span class="p">,</span> <span class="n">cnxn</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nationality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>165</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Let's-chech-how-many-players-are-in-the-FIFA">Let's chech how many players are in the FIFA<a class="anchor-link" href="#Let's-chech-how-many-players-are-in-the-FIFA"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Num_players</span> <span class="o">=</span> <span class="s2">&quot;SELECT COUNT(*) AS Num_Of_Players FROM Fifa18&quot;</span>
+
+<span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">Num_players</span><span class="p">,</span> <span class="n">cnxn</span><span class="p">)</span>
+
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Num_Of_Players</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>17981</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="There-are-17981-players-in-the-FIFA">There are 17981 players in the FIFA<a class="anchor-link" href="#There-are-17981-players-in-the-FIFA"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Find-out-how-many-players-are-from-each-country...">Find out how many players are from each country...<a class="anchor-link" href="#Find-out-how-many-players-are-from-each-country..."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">NumOfPlayerPerCuntry</span> <span class="o">=</span> <span class="s2">&quot;SELECT COUNT(*) AS NumOfPlayerPerCuntry, Nationality FROM Fifa18 GROUP BY Nationality ORDER BY NumOfPlayerPerCuntry DESC&quot;</span>
+                       
+
+<span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">NumOfPlayerPerCuntry</span><span class="p">,</span> <span class="n">cnxn</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NumOfPlayerPerCuntry</th>
+      <th>Nationality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1630</td>
+      <td>England</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1140</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1019</td>
+      <td>Spain</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>978</td>
+      <td>France</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>965</td>
+      <td>Argentina</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>812</td>
+      <td>Brazil</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>799</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>592</td>
+      <td>Colombia</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>469</td>
+      <td>Japan</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>429</td>
+      <td>Netherlands</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What's-the-highest-Salary-paid-to-a-player?">What's the highest Salary paid to a player?<a class="anchor-link" href="#What's-the-highest-Salary-paid-to-a-player?"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Highest_Salary</span> <span class="o">=</span> <span class="s2">&quot;SELECT MAX([Wage (€)]) AS Max_Salary FROM Fifa18&quot;</span>
+<span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">Highest_Salary</span><span class="p">,</span> <span class="n">cnxn</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Max_Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>565000.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Which-player-is-getting-paid-the-highest-and-where-is-he-from?">Which player is getting paid the highest and where is he from?<a class="anchor-link" href="#Which-player-is-getting-paid-the-highest-and-where-is-he-from?"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HighestPaidPlayer</span> <span class="o">=</span> <span class="s2">&quot;SELECT Name, Nationality FROM Fifa18 WHERE [Wage (€)] = 565000&quot;</span>
+<span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">HighestPaidPlayer</span><span class="p">,</span> <span class="n">cnxn</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Nationality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cristiano Ronaldo</td>
+      <td>Portugal</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>L. Messi</td>
+      <td>Argentina</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="It-appears-we-have-ties.-The-two-GOATS(CR7-and-L.Messi-Make-the-same-amount)">It appears we have ties. The two GOATS(CR7 and L.Messi Make the same amount)<a class="anchor-link" href="#It-appears-we-have-ties.-The-two-GOATS(CR7-and-L.Messi-Make-the-same-amount)"> </a></h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HighestPaidPlayer</span> <span class="o">=</span> <span class="s2">&quot;SELECT Name, [Wage (€)], Nationality  FROM Fifa18 WHERE [Wage (€)] = (SELECT MAX([Wage (€)]) FROM Fifa18)&quot;</span>
+<span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">HighestPaidPlayer</span><span class="p">,</span> <span class="n">cnxn</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Wage (€)</th>
+      <th>Nationality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cristiano Ronaldo</td>
+      <td>565000.0</td>
+      <td>Portugal</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>L. Messi</td>
+      <td>565000.0</td>
+      <td>Argentina</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="What's-the-minimum-Salary-paid?">What's the minimum Salary paid?<a class="anchor-link" href="#What's-the-minimum-Salary-paid?"> </a></h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Min_Salary</span> <span class="o">=</span> <span class="s2">&quot;SELECT Min([Wage (€)]) FROM Fifa18&quot;</span>
+<span class="n">df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">Min_Salary</span><span class="p">,</span> <span class="n">cnxn</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It appears the are some people who are just volunteers.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Which-player-is-got-the-highest-rating-and-from-which-club?-USE-THE-NESTED-QUERY-METHOD-FOR-THIS.">Which player is got the highest rating and from which club? USE THE NESTED QUERY METHOD FOR THIS.<a class="anchor-link" href="#Which-player-is-got-the-highest-rating-and-from-which-club?-USE-THE-NESTED-QUERY-METHOD-FOR-THIS."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Top_player</span> <span class="o">=</span> <span class="s2">&quot;SELECT Name, Overall, Club FROM Fifa18 WHERE Overall = (SELECT MAX(Overall) FROM Fifa18)&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">Top_player</span><span class="p">,</span> <span class="n">cnxn</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Overall</th>
+      <th>Club</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cristiano Ronaldo</td>
+      <td>94.0</td>
+      <td>Real Madrid CF</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Cristiano-Ronaldo-is-the-highest-rated-player-in-FIFA">Cristiano Ronaldo is the highest rated player in FIFA<a class="anchor-link" href="#Cristiano-Ronaldo-is-the-highest-rated-player-in-FIFA"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Which-are-top-3-clubs-based-on-overall-rating-?">Which are top 3 clubs based on overall rating ?<a class="anchor-link" href="#Which-are-top-3-clubs-based-on-overall-rating-?"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Top_Clubs</span> <span class="o">=</span> <span class="s2">&quot;SELECT TOP 4 AVG(Overall) AS Avg_Overall_Rating, Club FROM Fifa18  GROUP BY Club ORDER BY AVG(Overall) DESC&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">Top_Clubs</span><span class="p">,</span> <span class="n">cnxn</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Avg_Overall_Rating</th>
+      <th>Club</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>82.560000</td>
+      <td>FC Barcelona</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>81.653846</td>
+      <td>Juventus</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>81.038462</td>
+      <td>Real Madrid CF</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>79.423077</td>
+      <td>FC Bayern Munich</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="We-can-even-combine-with-Viz-from-here.-We-can-run-both-Matplotlib-or-Seaborn-right-here-at-the-same-time">We can even combine with Viz from here. We can run both Matplotlib or Seaborn right here at the same time<a class="anchor-link" href="#We-can-even-combine-with-Viz-from-here.-We-can-run-both-Matplotlib-or-Seaborn-right-here-at-the-same-time"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">x_ax</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Club&quot;</span><span class="p">]</span>
+<span class="n">y_ax</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Avg_Overall_Rating&quot;</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x_ax</span><span class="p">,</span> <span class="n">y_ax</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Clubs&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Overall Rating&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Highest Rated Clubs in Fifa&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;function matplotlib.pyplot.show(close=None, block=None)&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAAAAFdCAYAAADbgL4+AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjQuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/MnkTPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAixklEQVR4nO3deZgldX3v8fdHQGSTRQcygogLAcFl0BF3ZZGo1wW8bmiMgxKJuUai0Sjuel1CjDHGJeq4TuKC4FVBoygOghuiw74HF0RlZAYUREQU+N4/6tfOoenpPj0zp6un+/16nn7qnFq/VX3O+ZxfVZ2qVBWSJGlm3a7vAiRJmo8MYEmSemAAS5LUAwNYkqQeGMCSJPXAAJYkqQcGsOaFJBck2W/IcS9L8pjRVjT7JKkk91rHaQ9L8u0NPe4U83l1kg+v73zGzfMrSZYMPH9LkquS/HJDLkcCA1hzwESBOf5Dvqr2rqpTZry4NfW8McknphjnsiQ3JPltkl8m+XiSrYec/wYJtSmW8dgk30xyXZLVSU5N8uRRLnMyVfW2qvrrdZm2bds/tG099vfMqnp8VS1r49wVeBmwV1X92YasXQIDWJptnlRVWwOLgH2AV/VbTifJ04DjgP8EdgF2Al4PPKnPutbT26tq64G/z4wbfjfg6qpa1UdxmvsMYM0Lg63kJFskWZbk10kuSvKKJD8fN8miJOcmuTbJZ5LcYWBeT0xydpJrknw3yf0Ghr0yyS9aK/GSJAcmeRzwauCZraV1zlT1VtUvga/SBfHYvI9K8qM27wuTPKX1vzfwAeChbf7XtP6bJ3lHksuTXJnkA0m2GJjfPyZZmeSKJM+fZNsFeCfw5qr6cFVdW1W3VNWpVfWCCcbfre3O3nSg3ylJ/nrcbN/Ttu/FSQ4cGHBYkh+39fxJkr9cS11/2qswsMwlbX2vSvKaSTfyxPM8Jclft9fKScBd2jb9eBt+XNs7cW3bG7D3dJchjTGANR+9AdgNuAdwEPCcCcZ5BvA44O7A/YDDAJI8APgo8DfAnYAPAie0sNsD+DvgQVW1DfBY4LKqOhF4G/CZ1tK6/1QFJtkFeDzww4HePwIeCWwLvAn4RJKFVXUR8ELgtDb/7dr4/wz8OV2I3wvYma7VSvtS8PK2/rsDkx3z3gO4K/DZqeqehgcDPwbuTPf/+FySHZJsBbwbeHzbhg8Dzp7GfB/R6j0QeH37cjJtVfV1uu1/Rdumh7VBX6HbXjsCZwKfXJf5S2AAa+74QmuRXtNagP8xybjPAN5WVb+uqp/TfeCP9+6quqKqfgV8kTUt0RcAH6yq06vq5na88EbgIcDNwObAXkk2q6rLqupH67Ae1wE/A1bRhRMAVXVcq+mWtrv0UmDfiWbSWq0vAF5aVb+qquvovgQcOrANPlZV51fV9cAbJ6npTq27cprrMplVwLuq6o9tXS4BntCG3QLcJ8kWVbWyqi6YxnzfVFU3VNU5wDnAZF92Xj7wmrlqmJlX1Uer6rqqupFum90/ybbTqE/6EwNYc8UhVbXd2B/wfyYZ9y50ATfmZxOMM3jW6++AsZOh7ga8bFzY3xW4S1X9EHgJ3QfzqiTHJLnLOqzHNsB+wJ50LUQAkjx3YNf3NcB9BoePswDYEjhjYPwTW3+47Tb46SQ1Xd26C6e3KpP6Rd36TjA/pduG1wPPpGvRr0zy30n2nMZ81/Z/m8g7Bl4za9uOf5JkkyRHt8MAvwEua4OmnFaaiAGs+Wgl3YlEY+46jWl/Brx1MOyrasuq+jRAVX2qqh5BF9RFtxuY9nhoVXUq8HHgHQBJ7gZ8iG4X953al4zzgaxl/lcBNwB7D9S5bTvBC7ptMLjeu05SziVtvZ86ZPnXt+6WA/3Gn0W8c2ulDy7/CoCq+mpVHUQX+BfTrfds8GzgYLrd9dvSHcaANf8DaVoMYM1HxwKvSrJ9kp3pQm1YHwJemOTB6WyV5AlJtkmyR5IDkmwO/J4uAG9u010J7JZkOu+5dwEHJVkEbEUXsqsBkjyPrgU85kpglyS3B6iqW1qt/5ZkxzbNzkkeO7ANDkuyV5ItGdjVPV5rqf4D8Lokz0tyxyS3S/KIJEsnGH818AvgOa3V+HzgnuNG2xE4MslmSZ4O3Bv4cpKdkjy5HQu+Efgta7Zh37ahq+lqui8Xb+u3HG3sDGDNR/8X+DnwE+DrdCcX3TjMhFW1gu7Y6nuBX9OdJHVYG7w5cDRd6/OXdCHz6jbsuNa9OsmZQy5rNd3Pfl5XVRcC/wqcRhe29wW+MzD6ycAFwC8Hjme+stX3vbbL9Ot0JyhRVV+hC/iT2zgnT1HLZ+l2DT+frqV6JfAW4Pi1TPIC4B/pwmpv4Lvjhp9OdzLTVcBbgadV1dV0n0kva8v4FfBoJj+cMJP+k25X+S+AC4Hv9VuONna59WEYaf5J8rfAoVX16L5rkTR/2ALWvJNkYZKHt92oe9C1uD7fd12S5pdNpx5FmnNuT/f73bsD1wDHMPnPliRpg3MXtCRJPXAXtCRJPTCAJUnqwUZxDPjOd75z7bbbbn2XIUnStJxxxhlXVdWCiYZtFAG82267sWLFir7LkCRpWpKs9TKv7oKWJKkHBrAkST0wgCVJ6oEBLElSDwxgSZJ6YABLktQDA1iSpB4YwJIk9cAAliSpBwawJEk9MIAlSeqBASxJUg82ipsxbGi7HfXffZcwJ1x29BP6LkGSNlq2gCVJ6oEBLElSD+blLmjNXh4e2HA8RCDNbiNtASd5aZILkpyf5NNJ7pBkhyQnJbm0dbcfZQ2SJM1GI2sBJ9kZOBLYq6puSHIscCiwF7C8qo5OchRwFPDKUdUhacNw78SG494JweiPAW8KbJFkU2BL4ArgYGBZG74MOGTENUiSNOuMLICr6hfAO4DLgZXAtVX1NWCnqlrZxlkJ7DiqGiRJmq1GFsDt2O7BwN2BuwBbJXnONKY/IsmKJCtWr149qjIlSerFKHdBPwb4SVWtrqo/Ap8DHgZcmWQhQOuummjiqlpaVYuravGCBQtGWKYkSTNvlD9Duhx4SJItgRuAA4EVwPXAEuDo1j1+hDVI0rzgSXIbxkyeIDeyAK6q05N8FjgTuAk4C1gKbA0cm+RwupB++qhqkCRpthrphTiq6g3AG8b1vpGuNSxJ0rzlpSglSeqBASxJUg8MYEmSemAAS5LUAwNYkqQeGMCSJPXAAJYkqQcGsCRJPTCAJUnqgQEsSVIPDGBJknpgAEuS1AMDWJKkHhjAkiT1wACWJKkHBrAkST0wgCVJ6oEBLElSDwxgSZJ6YABLktQDA1iSpB4YwJIk9cAAliSpBwawJEk9MIAlSerByAI4yR5Jzh74+02SlyTZIclJSS5t3e1HVYMkSbPVyAK4qi6pqkVVtQh4IPA74PPAUcDyqtodWN6eS5I0r8zULugDgR9V1U+Bg4Flrf8y4JAZqkGSpFljpgL4UODT7fFOVbUSoHV3nGiCJEckWZFkxerVq2eoTEmSZsbIAzjJ7YEnA8dNZ7qqWlpVi6tq8YIFC0ZTnCRJPZmJFvDjgTOr6sr2/MokCwFad9UM1CBJ0qwyEwH8LNbsfgY4AVjSHi8Bjp+BGiRJmlVGGsBJtgQOAj430Pto4KAkl7ZhR4+yBkmSZqNNRznzqvodcKdx/a6mOytakqR5yythSZLUAwNYkqQeGMCSJPXAAJYkqQcGsCRJPTCAJUnqgQEsSVIPDGBJknpgAEuS1AMDWJKkHhjAkiT1wACWJKkHBrAkST0wgCVJ6oEBLElSDwxgSZJ6YABLktQDA1iSpB4YwJIk9cAAliSpBwawJEk9MIAlSeqBASxJUg8MYEmSejDSAE6yXZLPJrk4yUVJHppkhyQnJbm0dbcfZQ2SJM1Go24B/ztwYlXtCdwfuAg4ClheVbsDy9tzSZLmlZEFcJI7Ao8CPgJQVX+oqmuAg4FlbbRlwCGjqkGSpNlqlC3gewCrgY8lOSvJh5NsBexUVSsBWnfHiSZOckSSFUlWrF69eoRlSpI080YZwJsCDwDeX1X7ANczjd3NVbW0qhZX1eIFCxaMqkZJknoxygD+OfDzqjq9Pf8sXSBfmWQhQOuuGmENkiTNSiML4Kr6JfCzJHu0XgcCFwInAEtavyXA8aOqQZKk2WrTEc//xcAnk9we+DHwPLrQPzbJ4cDlwNNHXIMkSbPOSAO4qs4GFk8w6MBRLleSpNnOK2FJktQDA1iSpB4YwJIk9cAAliSpBwawJEk9MIAlSeqBASxJUg8MYEmSemAAS5LUAwNYkqQeGMCSJPXAAJYkqQcGsCRJPTCAJUnqgQEsSVIPDGBJknqw6VQjJHnABL2vBX5aVTdt+JIkSZr7pgxg4D+ABwDnAgHu0x7fKckLq+prI6xPkqQ5aZhd0JcB+1TV4qp6ILAPcD7wGODtI6xNkqQ5a5gA3rOqLhh7UlUX0gXyj0dXliRJc9swu6AvSfJ+4Jj2/JnA/yTZHPjjyCqTJGkOG6YFfBjwQ+AlwEuBH7d+fwT2H1FdkiTNaVO2gKvqBuBf2994v93gFUmSNA8M8zOkhwNvBO42OH5V3WN0ZUmSNLcNcwz4I3S7ns8Abp7OzJNcBlzXprupqhYn2QH4DLAb3RnWz6iqX09nvpIkbeyGOQZ8bVV9papWVdXVY3/TWMb+VbWoqha350cBy6tqd2B5ey5J0rwyTAv4G0n+BfgccONYz6o6cx2XeTCwX3u8DDgFeOU6zkuSpI3SMAH84NZdPNCvgAOGmLaAryUp4INVtRTYqapWAlTVyiQ7TqdgSZLmgmHOgl6fnxo9vKquaCF7UpKLh50wyRHAEQC77rrrepQgSdLss9YATvKcqvpEkn+YaHhVvXOqmVfVFa27KsnngX2BK5MsbK3fhcCqtUy7FFgKsHjx4pp6VSRJ2nhMdhLWVq27zQR/W0814yRbJdlm7DHwF3TXkD4BWNJGWwIcv06VS5K0EVtrC7iqPtgefr2qvjM4rP02eCo7AZ9PMracT1XViUl+AByb5HDgcuDp61S5JEkbsWFOwnoP3e0Ip+p3K+1mDfefoP/VwIHDFihJ0lw02THghwIPAxaMOw58R2CTURcmSdJcNlkL+PZ0x3o3pTvuO+Y3wNNGWZQkSXPdZMeATwVOTfLxqvrpDNYkSdKcN8wx4N+1K2HtDdxhrGdVDXMhDkmSNIFhrgX9SeBi4O7Am+huoPCDEdYkSdKcN0wA36mqPgL8sapOrarnAw8ZcV2SJM1pw+yC/mPrrkzyBOAKYJfRlSRJ0tw3TAC/Jcm2wMvofv97R+AloyxKkqS5bpibMXypPbwW2B+GvhKWJElai8kuxLEJ8AxgZ+DEqjo/yROBVwNbAPvMTImSJM09k7WAPwLcFfg+8O4kPwUeChxVVV+YgdokSZqzJgvgxcD9quqWJHcArgLuVVW/nJnSJEmauyb7GdIfquoWgKr6PfA/hq8kSRvGZC3gPZOc2x4HuGd7HqCq6n4jr06SpDlqsgC+94xVIUnSPDPZzRi8AYMkSSMyzKUoJUnSBmYAS5LUAwNYkqQeTHYlrPOAmmgQngUtSdJ6mews6CfOWBWSJM0zngUtSVIPJtsFfR2T74K+48iqkiRpjpusBbzNTBYiSdJ8MvRZ0El2TLLr2N80ptskyVlJvtSe75DkpCSXtu7261K4JEkbsykDOMmTk1wK/AQ4FbgM+Mo0lvH3wEUDz48CllfV7sDy9lySpHllmBbwm4GH0N0N6e7AgcB3hpl5kl2AJwAfHuh9MLCsPV4GHDJssZIkzRXDBPAfq+pq4HZJbldV3wAWDTn/dwGvAG4Z6LdTVa0EaN0dhy9XkqS5YbLfAY+5JsnWwDeBTyZZBdw01URJngisqqozkuw33cKSHAEcAbDrrkMfcpYkaaMwTAv4YOB3wEuBE4EfAU8aYrqHA09OchlwDHBAkk8AVyZZCNC6qyaauKqWVtXiqlq8YMGCIRYnSdLGY9IATrIJcHxV3VJVN1XVsqp6d9slPamqelVV7VJVuwGHAidX1XOAE4AlbbQlwPHrtwqSJG18Jg3gqroZ+F2SbTfgMo8GDmpnVh/UnkuSNK8Mcwz498B5SU4Crh/rWVVHDruQqjoFOKU9vpruTGpJkuatYQL4v9ufJEnaQKYM4KpalmQLYNequmQGapIkac4b5kpYTwLOpjsDmiSLkpww4rokSZrThvkZ0huBfYFrAKrqbODuI6tIkqR5YJgAvqmqrh3Xb6LbFEqSpCENcxLW+UmeDWySZHfgSOC7oy1LkqS5bZgW8IuBvYEbgU8B1wIvGWFNkiTNecO0gPeoqtcArxl1MZIkzRfDtIDfmeTiJG9OsvfIK5IkaR6YMoCran9gP2A1sDTJeUleO+rCJEmay4ZpAVNVv6yqdwMvpPtN8OtHWZQkSXPdMBfiuHeSNya5AHgv3RnQu4y8MkmS5rBhTsL6GPBp4KCqumLE9UiSNC8ME8D7A/cEtk/yq6r6/YhrkiRpzlvrLugkmyZ5O3A5sAz4BPCzJG9PstlMFShJ0lw02THgfwF2AO5RVQ+sqn3oWsLbAe+YgdokSZqzJgvgJwIvqKrrxnpU1W+AvwX+16gLkyRpLpssgKuqbnPThaq6GW/GIEnSepksgC9M8tzxPZM8B7h4dCVJkjT3TXYW9IuAzyV5PnAGXav3QcAWwFNmoDZJkuastQZwVf0CeHCSA+juhhTgK1W1fKaKkyRprpryd8BVdTJw8gzUIknSvDHUtaAlSdKGZQBLktQDA1iSpB6MLICT3CHJ95Ock+SCJG9q/XdIclKSS1t3+1HVIEnSbDXKFvCNwAFVdX9gEfC4JA8BjgKWV9XuwPL2XJKkeWVkAVyd37anm7W/Ag6mu7kDrXvIqGqQJGm2Gukx4CSbJDkbWAWcVFWnAztV1UqA1t1xLdMekWRFkhWrV68eZZmSJM24kQZwVd1cVYuAXYB9k9xnGtMurarFVbV4wYIFI6tRkqQ+zMhZ0FV1DXAK8DjgyiQLAVp31UzUIEnSbDLKs6AXJNmuPd4CeAzdTRxOAJa00ZYAx4+qBkmSZqspL0W5HhYCy5JsQhf0x1bVl5KcBhyb5HDgcuDpI6xBkqRZaWQBXFXnAvtM0P9q4MBRLVeSpI2BV8KSJKkHBrAkST0wgCVJ6oEBLElSDwxgSZJ6YABLktQDA1iSpB4YwJIk9cAAliSpBwawJEk9MIAlSeqBASxJUg8MYEmSemAAS5LUAwNYkqQeGMCSJPXAAJYkqQcGsCRJPTCAJUnqgQEsSVIPDGBJknpgAEuS1AMDWJKkHhjAkiT1YGQBnOSuSb6R5KIkFyT5+9Z/hyQnJbm0dbcfVQ2SJM1Wo2wB3wS8rKruDTwEeFGSvYCjgOVVtTuwvD2XJGleGVkAV9XKqjqzPb4OuAjYGTgYWNZGWwYcMqoaJEmarWbkGHCS3YB9gNOBnapqJXQhDey4lmmOSLIiyYrVq1fPRJmSJM2YkQdwkq2B/we8pKp+M+x0VbW0qhZX1eIFCxaMrkBJknow0gBOshld+H6yqj7Xel+ZZGEbvhBYNcoaJEmajUZ5FnSAjwAXVdU7BwadACxpj5cAx4+qBkmSZqtNRzjvhwN/BZyX5OzW79XA0cCxSQ4HLgeePsIaJEmalUYWwFX1bSBrGXzgqJYrSdLGwCthSZLUAwNYkqQeGMCSJPXAAJYkqQcGsCRJPTCAJUnqgQEsSVIPDGBJknpgAEuS1AMDWJKkHhjAkiT1wACWJKkHBrAkST0wgCVJ6oEBLElSDwxgSZJ6YABLktQDA1iSpB4YwJIk9cAAliSpBwawJEk9MIAlSeqBASxJUg8MYEmSejCyAE7y0SSrkpw/0G+HJCclubR1tx/V8iVJms1G2QL+OPC4cf2OApZX1e7A8vZckqR5Z2QBXFXfBH41rvfBwLL2eBlwyKiWL0nSbDbTx4B3qqqVAK274wwvX5KkWWHWnoSV5IgkK5KsWL16dd/lSJK0Qc10AF+ZZCFA665a24hVtbSqFlfV4gULFsxYgZIkzYSZDuATgCXt8RLg+BleviRJs8Iof4b0aeA0YI8kP09yOHA0cFCSS4GD2nNJkuadTUc146p61loGHTiqZUqStLGYtSdhSZI0lxnAkiT1wACWJKkHBrAkST0wgCVJ6oEBLElSDwxgSZJ6YABLktQDA1iSpB4YwJIk9cAAliSpBwawJEk9MIAlSeqBASxJUg8MYEmSemAAS5LUAwNYkqQeGMCSJPXAAJYkqQcGsCRJPTCAJUnqgQEsSVIPDGBJknpgAEuS1INeAjjJ45JckuSHSY7qowZJkvo04wGcZBPgfcDjgb2AZyXZa6brkCSpT320gPcFflhVP66qPwDHAAf3UIckSb3pI4B3Bn428PznrZ8kSfPGpj0sMxP0q9uMlBwBHNGe/jbJJSOtava5M3BV30VMJv/cdwW9mfX/G/D/03cRk/F/M3uN4H9zt7UN6COAfw7cdeD5LsAV40eqqqXA0pkqarZJsqKqFvddh27L/83s5v9n9vJ/c2t97IL+AbB7krsnuT1wKHBCD3VIktSbGW8BV9VNSf4O+CqwCfDRqrpgpuuQJKlPfeyCpqq+DHy5j2VvRObt7veNgP+b2c3/z+zl/2ZAqm5z/pMkSRoxL0UpSVIPDOC1SHJzkrMH/nZr/fdN8s12Kc2Lk3w4yZbjpt0vybVtunOTfD3JjiOu95Qknl04gSS/naHl7JfkYTOxrNli4H1yfpIvJtluHedzWJL3rqV/JTlwoN9TWr+nTWP+uyU5fy3D7pLks2sZNuH7KslmSY5Ocmlb9+8neXwbdlmS8wY+O0b2mtjYPqeG1bb75Uky0O8L6/NeTvLkyS59PNlrZFQM4LW7oaoWDfxdlmQn4DjglVW1B3Bv4ERgmwmm/1ab7n50Z36/aNgFJ+nl2LzW237AvApg1rxP7gP8imm8zqfhPOBZA88PBc7ZEDNOsmlVXVFVQ4d582ZgIXCftu5P4tafA/sPfHZ8d0PUuha9fU5N1zp8rl0DPLxNux3d9l5nVXVCVR29PvPY0Azg6XkRsKyqTgOozmer6sq1TdC+wW0D/Lo93zfJd5Oc1bp7tP6HJTkuyReBryXZOsnH2jfpc5M8tY33F0lOS3JmG3/rCZb5rDbd+cman5Un+W2StyY5J8n32huVJE9Kcnqr6etj/eeS9m3/SwPP39u2+eOTHDtuvC+2xxNu69bCeVPrf16SPVvL44XAS1uL4pFJPj7YShv79p5kYWudjLUcHzlDm2HUTqNd1S7JPZOcmOSMJN9Ksmfrvy6vtW8B+7ZW59bAvYCzxwYmeX2SH7RtuXSs1ZTkge21fhoDwTLBe+1PLZ8kWyQ5pr3nPgNsMb6Y1pJ8AfDiqroRoKqurKpjx4/bk1F+Tn0ryaKB6b6T5H5Jtkry0fZ/OCvJwW34+G19WJLPtdfGpUnePsl6HEP3ZQvgfwOfG1juhO/n9vg278+BWt7bHu+U5PPt9XFO1uyl2CTJh5JckORrSW7z/9+QDOC12yJrdut8vvW7D3DGkNM/MsnZwOXAY4CPtv4XA4+qqn2A1wNvG5jmocCSqjoAeB1wbVXdt307PTnJnYHXAo+pqgcAK4B/GFxokrsA/wwcACwCHpTkkDZ4K+B7VXV/4Jt0HyIA3wYe0mo6BnjFkOs4F5wEPCTJVu35M4HPDLGtr2r93w+8vKouAz4A/FtrUXxrkmU+G/hqVS0C7s9AmGys0t1k5UDW/KZ/KV1APRB4OfAfrf+6vNYK+DrwWLrrxo+/bsB7q+pBrSW6BfDE1v9jwJFV9dAJ5jn4Xhv0t8Dv2nvurcADJ5j2XsDlVfWbSWr+RvvsOH2yFdsAZvpz6sPAYQBJ/hzYvKrOBV4DnFxVDwL2B/5l4D01flsvonuf3Rd4ZpLBCzMNWg48qr22DgU+M+Q6wbj35wTD3w2c2j4LHwCM/RR2d+B9VbU3XQv8qdNY5rS5q3PtbmgfkOvqW1X1RIAkrwTeTtdC2hZYlmR3ug+WzQamOamqftUeP4Y13/6oql8neSLdHaS+077k356u1THoQcApVbW6LfuTwKOALwB/AMa+NZ4BHNQe70IXOgvbPH+yHuu9UWm/Sz8ReFK644BPoAuFRzP5th77Nn4G3bfz6fgB8NEkmwFfqKqz130NerdF+wDfjW5bnNRaqQ8DjsuaQ3ibt+66vtaOAY6ke/+8DHj1wLD9k7wC2BLYAbggyTeB7arq1DbOf9HdgW3M4Htt0KPoPpypqnOTnDtkfePtX1UzccnFmf6cOg54XZJ/BJ4PfLz1/wvgyUnGwu4OwK7t8fhtvbyqrm3LvJDuUo2D9wcYczPdF7ZnAlu03evDrtdU788DgOcCVNXNwLVJtgd+MvB+PIPudT0ytoCn5wIm/kY8lRPo3tjQHTv6xsBxozsMjHf9wONw22tkh+7FPHa8Z6+qOnyCcdbmj7Xmd2c3s+YL2HvoWhH3Bf5mXE1zxU3c+vU+uI6fAZ5B96b8QVVdx9Tb+sbWHdyOa11m28V3e4Cq+ibd6+EXwH8lee56rVm/xgLgbnTr9yK6db5m3LHJe7fx1+m1VlXfp2vZ3bmq/mesf5I70LWun9bm+aE2z4neP4Oun2TYVL/N/CGwa5KJjqnOBiP7nKqq39HtNTqY7j3zqTZ+gKcO/L93raqL2rDx2/rGgceTvX+g++L1HmD87v3J3s+Dy5hq/uNNp7b1ZgBPz3uBJUkePNYjyXOS/NkU0z0C+FF7vC3dBy+0XTlr8TXg7waWsz3wPeDhSe7V+m3ZdgMNOh14dJI7t103zwJOZXKDNS2ZYtyN1U+BvZJsnmRbut2lY06h2w31Atbs5hpmW493Hbc+0eUy1nwQHkxrRSS5G7Cqqj4EfKQte6PWWjRH0u3uuwH4SZKnQ/flI8n926jr81p7Fbdu+cKaD96rWsv7aa2ea+haNY9ow/9yyGV8c2zcJPcB7jd+hBZCHwHene5yumPH9Z8z/KqM1Kg/pz5Mt5fgBwMt268CL25fNEmyz7qXfyvfAv4J+PS4/pO9n4exnO5wA0k2SXLH9a50HRjA09BOYjgUeEe60/svAh4JTHQs6JHtuMw5wF/R7TaDbhfPPyX5Dt2lONfmLcD26U4sOYdul9ZqujfDp9uuse8Be46rcSXdB9U36M4UPbOqjp9i1d5It7vwW8zyO5VMV7ozL2+sqp/RfYs+F/gkcNbYOG0X1JfodlF+qfWbcltP4IvAU9r//ZF0rbFHJ/k+8GDWtAT2A85OchbdMaZ/X/817V9VnUX3mjuULsQOb6/dC1hzz+83so6vtar6SlV9Y1y/a+i283l0h1l+MDD4ecD70p2EdcOQi3k/sHX7n78C+P5axnstsBq4MN0JXF9oz3s36s+pqjqjzetjA73fTPcF89y2Pd68gdalquod43fnT/Z+HtLf0x26OI9uV/PeG6Le6fJKWJrTWsvrQ1W1b9+1SHNBO9HzFGDPqrql53I2araANWcleSHdrqvX9l2LNBe08xVOB15j+K4/W8CSJPXAFrAkST0wgCVJ6oEBLElSDwxgaY5J8mfprmf8oyQXJvlykj/PEHd6yQzdOUqSl6KU5pR2IYTP012M/9DWbxEw526wIW3sbAFLc8v+dJcc/cBYj3Zt2z9dazfj7r2b5EtJ9ht4/q/p7iSzPMmC1u/I1po+N8kxM7Ae0pxnAEtzy3TuhDORreiunvYAukuYvqH1PwrYp90l6IXrV6IkMIAl3dotrLke9iforg8M7ZJ/7XrHN/VRmDTXGMDS3DLMnXCmupPMoLEr9TwBeF+b9xntGtuS1oMBLM0tJwObJ3nBWI8kD6K7XeCYy4BFSW6X7mbog9fJvh3tjkLAs4FvJ7kdcNd2I4RXANsBW49sDaR5wm+x0hxSVZXkKcC7khwF/J4ucF8yMNp3gJ/Q3UHofODMgWHXA3snOQO4lu5m6JsAn2i3fQvwb+0uRJLWg9eCliSpB+6CliSpBwawJEk9MIAlSeqBASxJUg8MYEmSemAAS5LUAwNYkqQeGMCSJPXg/wNxZKK97GDolQAAAABJRU5ErkJggg==
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="IF-YOU-WANT-TO-USE-JUST-SQL-TO-PERFORM-YOUR-EDA,-BELOW-IS-THE-CODE.">IF YOU WANT TO USE JUST SQL TO PERFORM YOUR EDA, BELOW IS THE CODE.<a class="anchor-link" href="#IF-YOU-WANT-TO-USE-JUST-SQL-TO-PERFORM-YOUR-EDA,-BELOW-IS-THE-CODE."> </a></h3><p>/*
+We will be performing Explatory Data Analysis on a FIFA 2018 DataSet.</p>
+<p>DateSet can be found here if further research/Exploration needs to be done.</p>
+<p>Data Source: <a href="https://public.tableau.com/en-us/s/resources">https://public.tableau.com/en-us/s/resources</a></p>
+<p>*/</p>
+<p>-- Check our dataset.</p>
+<p>SELECT *</p>
+<p>FROM</p>
+<p>Fifa18</p>
+<p>--Check how many countries are represented</p>
+<p>SELECT COUNT(DISTINCT Nationality)</p>
+<p>FROM</p>
+<p>DBO.Fifa18</p>
+<p>--Check the number of players in FIFA</p>
+<p>SELECT<br />
+COUNT(*) as Number_of_Players
+FROM
+Fifa18</p>
+<p>--How many players from each country. Check the top 5</p>
+<p>SELECT TOP 5 COUNT(*) AS NumOfPlayer_FromEach_Country, 
+Nationality</p>
+<p>FROM Fifa18</p>
+<p>GROUP BY nationality 
+ORDER BY NumOfPlayer_FromEach_Country DESC</p>
+<p>--England appears to have the most players in FIFA.</p>
+<p>--What's the highest Salary paid to a player</p>
+<p>SELECT</p>
+<p>MAX([Wage (€)]) AS Maximum_Salary</p>
+<p>FROM Fifa18</p>
+<p>-- Which player is getting paid the highest and where is he from?</p>
+<p>SELECT
+Name, 
+Nationality</p>
+<p>FROM Fifa18</p>
+<p>WHERE [Wage (€)] = 565000  --Interestingly, we have two players getting the highest salary. The two goats(CR7, and Messi)</p>
+<p>--We can also do it this way. Nesting a query within a query(Outer query)</p>
+<p>SELECT 
+name, 
+[Wage (€)]</p>
+<p>FROM
+Fifa18
+WHERE [Wage (€)] = (SELECT max([Wage (€)]) FROM Fifa18)</p>
+<p>---What's the minimum Salary paid?</p>
+<p>SELECT 
+min([Wage (€)])
+FROM 
+Fifa18</p>
+<p>--It appears some people work in FIFA volunterly.</p>
+<p>--Which player is got the highest rating and from which club? USE THE NESTED QUERY METHOD FOR THIS.</p>
+<p>SELECT 
+NAME, 
+OVERALL, 
+CLUB
+FROM 
+Fifa18
+WHERE OVERALL = (SELECT MAX(OVERALL) FROM Fifa18)     --My main man Critiano Ronaldo(CR7) Comes on top.</p>
+<p>--Which are top 3 clubs based on overall rating ?</p>
+<p>SELECT 
+TOP 5
+AVG(overall) as Average_Overall_rating, 
+CLUB
+FROM
+Fifa18
+GROUP BY CLUB
+ORDER BY Average_Overall_rating DESC</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/DS_Projects/2022/01/23/SQL-IN-PYTHON.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/DS_Projects/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/DS_Projects/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/DS_Projects/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Deep dive into the Information Iformatics.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/SeifHH" target="_blank" title="SeifHH"><svg class="svg-icon grey"><use xlink:href="/DS_Projects/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/Seifedin_HH" target="_blank" title="Seifedin_HH"><svg class="svg-icon grey"><use xlink:href="/DS_Projects/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
